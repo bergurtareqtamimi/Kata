@@ -47,4 +47,10 @@ def test_new_lines():
     assert kata.add("9,3\n5\n2") == 19
     assert kata.add("10\n1\n7") == 18
 
+def test_greate_than_1000():
+    assert kata.add("1001,2") == 2
+    assert kata.add("10001\n1\n7") == 8
+    assert kata.add("1000\n1\n7") == 1008
+    assert kata.add("10000,10000,100001,3000000\n3") == 3
+
 ## pytest <filename with the test> ###############

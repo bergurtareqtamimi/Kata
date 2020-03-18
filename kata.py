@@ -5,6 +5,12 @@ def all_is_digit(a_string):
             return False
     return True
 
+def ignore_greate_than_1000(number_list):
+    for i,token in enumerate(number_list):
+        if int(token) > 1000:
+            number_list[i] = 0
+    return number_list
+
 def clean_string(numbers):
     collection_string = ""
     for token in numbers:
@@ -35,7 +41,7 @@ def add(numbers):
 
         number_list = cleaned_string.split(",")
         number_list = to_integer(number_list)
+        number_list = ignore_greate_than_1000(number_list)
 
         return sum(number_list)
 
-print(add("1\n2,3"))
