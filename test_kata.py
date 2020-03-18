@@ -28,16 +28,16 @@ def test_two_numbers():
     assert kata.add("9,4") == 13
     assert kata.add("10,6") == 16
 
-#def test_more_than_one_numbers():
-    #assert kata.add("1,2") == 3
-    #assert kata.add("2,2,3") == 7
-    #assert kata.add("5,2,4") == 11
-    #assert kata.add("4,4,4,4,4,3") == 25
-    #assert kata.add("2") == 2
-    #assert kata.add("6,6") == 12
-    #assert kata.add("7,1,1,1,1,1,1") == 13
-    #assert kata.add("8,6,4") == 18
-    #assert kata.add("9,3,5,2") == 19
-    #assert kata.add("10,1") == 11
+def test_more_than_two_numbers():
+    assert kata.add("1,2,3") == 6
+    assert kata.add("2,2,3") == 7
+    assert kata.add("5,2,4") == 11
+    assert kata.add("4,4,4,4,4,3") == 23
+    assert kata.add("2,6,3") == 11
+    assert kata.add("6,6,6") == 18
+    assert kata.add("7,1,1,1,1,1,1") == 13
+    assert kata.add("8,6,4") == 18
+    assert kata.add("9,3,5,2") == 19
+    assert kata.add("10,1,7") == 18
 
 ## pytest <filename with the test> ###############
