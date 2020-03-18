@@ -40,4 +40,11 @@ def test_more_than_two_numbers():
     assert kata.add("9,3,5,2") == 19
     assert kata.add("10,1,7") == 18
 
+def test_new_lines():
+    assert kata.add("1\n2,3") == 6
+    assert kata.add("7\n1,1,1\n1,1\n1") == 13
+    assert kata.add("8,6\n4") == 18
+    assert kata.add("9,3\n5\n2") == 19
+    assert kata.add("10\n1\n7") == 18
+
 ## pytest <filename with the test> ###############

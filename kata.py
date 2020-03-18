@@ -8,6 +8,8 @@ def all_is_digit(a_string):
 def clean_string(numbers):
     collection_string = ""
     for token in numbers:
+        if token == "\n":
+            collection_string += ","
         if token.isdigit() or token == ",":
             collection_string += token
 
@@ -36,3 +38,4 @@ def add(numbers):
 
         return sum(number_list)
 
+print(add("1\n2,3"))
