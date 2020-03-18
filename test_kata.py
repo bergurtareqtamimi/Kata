@@ -53,4 +53,13 @@ def test_greate_than_1000():
     assert kata.add("1000\n1\n7") == 1008
     assert kata.add("10000,10000,100001,3000000\n3") == 3
 
+def test_negatives():
+    assert kata.add("-1,3") == "Negatives not allowed: -1"
+    assert kata.add("1,-3") == "Negatives not allowed: -3"
+    assert kata.add("-1,-3") == "Negatives not allowed: -1,-3"
+    assert kata.add("-1,3,4,6,2,-4,-6") == "Negatives not allowed: -1,-4,-6"
+    assert kata.add("-1,3,4,6,2,-6") == "Negatives not allowed: -1,-6"
+    assert kata.add("-1,-3,-9") == "Negatives not allowed: -1,-3,-9"
+
+
 ## pytest <filename with the test> ###############

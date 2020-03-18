@@ -26,6 +26,21 @@ def to_integer(a_list):
         a_list[i] = int(token)
     return a_list
 
+def contains_negative(numbers):
+    for i in numbers:
+        if i == "-":
+            return True
+    return False
+
+def collect_negative(numbers):
+    coll_str = ""
+    for i,token in enumerate(numbers):
+        if token == "-" and numbers[i+1].isdigit():
+            coll_str += token+numbers[i+1]+","
+    
+    coll_str = coll_str[:-1]
+    return coll_str
+
 ########## Helper functions on the top #####
 
 
@@ -35,6 +50,10 @@ def add(numbers):
 
     elif all_is_digit(numbers) and numbers.isdigit():
         return int(numbers)
+
+    elif contains_negative(numbers):
+        negatives = collect_negative(numbers)
+        return "Negatives not allowed: "+negatives
 
     else:
         cleaned_string = clean_string(numbers)
