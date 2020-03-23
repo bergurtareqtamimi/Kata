@@ -15,6 +15,7 @@ def test_for_single_digit():
     assert kata.add("8") == 8
     assert kata.add("9") == 9
     assert kata.add("10") == 10
+    assert kata.add("100") == 100
 
 def test_two_numbers():
     assert kata.add("1,2") == 3
@@ -61,5 +62,14 @@ def test_negatives():
     assert kata.add("-1,3,4,6,2,-6") == "Negatives not allowed: -1,-6"
     assert kata.add("-1,-3,-9") == "Negatives not allowed: -1,-3,-9"
 
+def test_different_methods():
+    assert kata.add("//X\n1X2") == 3
+    assert kata.add("//%\n1%2%3") == 6
+    assert kata.add("/1/%\n%10000%3") == 4
+    assert kata.add("/1/%\n%100%3") == 104
+    assert kata.add("//%\n1%2%3") == 6
+    assert kata.add("//%\n100%2%3") == 105
+    assert kata.add("/909/%\n%2%3") == 914
 
+    
 ## pytest <filename with the test> ###############

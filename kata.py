@@ -14,16 +14,21 @@ def ignore_greate_than_1000(number_list):
 def clean_string(numbers):
     collection_string = ""
     for token in numbers:
-        if token == "\n":
-            collection_string += ","
+        #if token == "\n":
+            #collection_string += ","
         if token.isdigit() or token == ",":
             collection_string += token
+        else:
+            collection_string += ","
 
     return collection_string
 
 def to_integer(a_list):
     for i,token in enumerate(a_list):
-        a_list[i] = int(token)
+        if a_list[i].isdigit():
+            a_list[i] = int(token)
+        else:
+            a_list[i] = 0
     return a_list
 
 def contains_negative(numbers):
@@ -63,4 +68,3 @@ def add(numbers):
         number_list = ignore_greate_than_1000(number_list)
 
         return sum(number_list)
-
